@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovementsViewController" customModule="IrishRailApp" customModuleProvider="target">
+            <connections>
+                <outlet property="labelDate" destination="FyP-VO-e2Z" id="fUM-WN-iKd"/>
+                <outlet property="labelTrainID" destination="DfU-1t-cyD" id="qYn-Hr-K0P"/>
+                <outlet property="textFieldDate" destination="900-sm-RTX" id="MBY-pb-iRD"/>
+                <outlet property="textFieldTrainID" destination="EwO-ui-4hm" id="TSl-n8-xvS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write here ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EwO-ui-4hm">
+                    <rect key="frame" x="63" y="167" width="194" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Pick date ..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="900-sm-RTX">
+                    <rect key="frame" x="63" y="262.5" width="194" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKR-6Y-6JQ" userLabel="LoginButton" customClass="ACRoundButton" customModule="IrishRailApp" customModuleProvider="target">
+                    <rect key="frame" x="63" y="428" width="194" height="50"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="LWb-5w-DVm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <state key="normal" title="Continue">
+                        <color key="titleColor" red="0.0" green="0.32549019610000002" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="27"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.0" green="0.32549019610000002" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="backgroundColorAC">
+                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="buttonContinueTap:" destination="-1" eventType="touchUpInside" id="rHL-B1-Qi1"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FyP-VO-e2Z">
+                    <rect key="frame" x="63" y="221" width="194" height="21.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Train ID" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DfU-1t-cyD">
+                    <rect key="frame" x="63" y="120" width="194" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="27" id="Dae-gw-RIj"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="HKR-6Y-6JQ" firstAttribute="top" secondItem="900-sm-RTX" secondAttribute="bottom" constant="131.5" id="5zH-z1-oBo"/>
+                <constraint firstItem="900-sm-RTX" firstAttribute="leading" secondItem="FyP-VO-e2Z" secondAttribute="leading" id="8us-hH-xwI"/>
+                <constraint firstItem="HKR-6Y-6JQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="63" id="9qg-lc-BET"/>
+                <constraint firstItem="EwO-ui-4hm" firstAttribute="trailing" secondItem="DfU-1t-cyD" secondAttribute="trailing" id="9xE-PX-FBS"/>
+                <constraint firstItem="FyP-VO-e2Z" firstAttribute="leading" secondItem="EwO-ui-4hm" secondAttribute="leading" id="BzD-9y-0Em"/>
+                <constraint firstItem="EwO-ui-4hm" firstAttribute="top" secondItem="DfU-1t-cyD" secondAttribute="bottom" constant="20" id="C6Y-hl-hA0"/>
+                <constraint firstItem="900-sm-RTX" firstAttribute="top" secondItem="FyP-VO-e2Z" secondAttribute="bottom" constant="20" id="Cwy-xd-Ywt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HKR-6Y-6JQ" secondAttribute="trailing" constant="63" id="QZ8-gh-oW8"/>
+                <constraint firstItem="FyP-VO-e2Z" firstAttribute="trailing" secondItem="EwO-ui-4hm" secondAttribute="trailing" id="UNV-C6-g9s"/>
+                <constraint firstItem="FyP-VO-e2Z" firstAttribute="top" secondItem="EwO-ui-4hm" secondAttribute="bottom" constant="20" id="d7K-tx-sLW"/>
+                <constraint firstItem="DfU-1t-cyD" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="120" id="dMH-HR-3xu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DfU-1t-cyD" secondAttribute="trailing" constant="63" id="pw0-57-TCe"/>
+                <constraint firstItem="EwO-ui-4hm" firstAttribute="leading" secondItem="DfU-1t-cyD" secondAttribute="leading" id="sgL-fj-M8I"/>
+                <constraint firstItem="DfU-1t-cyD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="63" id="z1C-Kz-y9p"/>
+                <constraint firstItem="900-sm-RTX" firstAttribute="trailing" secondItem="FyP-VO-e2Z" secondAttribute="trailing" id="z2P-h2-AmY"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.75" y="99.295774647887328"/>
+        </view>
+    </objects>
+</document>
