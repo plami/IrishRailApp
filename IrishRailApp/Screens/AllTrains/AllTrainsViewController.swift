@@ -112,7 +112,12 @@ extension AllTrainsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: TrainTableViewCell = tableView.dequeueCell(TrainTableViewCell.self)
         let currentTrain = self.trainList[indexPath.item]
-        cell.configureCell(withDirection: currentTrain.Direction!, withDate: currentTrain.TrainDate!, withMessage: currentTrain.PublicMessage!)
+        guard let direction = currentTrain.Direction,
+            let date = currentTrain.TrainDate,
+            let publicMessage = currentTrain.PublicMessage else {
+                return UITableViewCell()
+        }
+        cell.configureCell(withDirection: direction, withDate: date, withMessage: publicMessage)
         
         return cell
     }

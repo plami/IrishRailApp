@@ -97,7 +97,16 @@ extension MovementsListViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MovementsTableViewCell = tableView.dequeueCell(MovementsTableViewCell.self)
         let currentTrain = self.trainList[indexPath.item]
-        cell.configureCell(withDestination: currentTrain.TrainDestination!, withDate: currentTrain.TrainDate!, withLocation: currentTrain.LocationFullName!, withLocationCode: currentTrain.LocationCode!, withDeparture: currentTrain.ExpectedDeparture!, withArrival: currentTrain.ExpectedArrival!)
+        guard let destination = currentTrain.TrainDestination,
+            let date = currentTrain.TrainDate,
+            let locationFullName = currentTrain.LocationFullName,
+            let locationCode = currentTrain.LocationCode,
+            let departure = currentTrain.ExpectedDeparture,
+            let arrival = currentTrain.ExpectedArrival else {
+                return UITableViewCell()
+        }
+        cell.configureCell(withDestination: destination, withDate: date, withLocation: locationFullName, withLocationCode: locationCode, withDeparture: departure, withArrival: arrival)
+        
         return cell
     }
 }

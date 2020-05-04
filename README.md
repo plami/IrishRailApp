@@ -14,6 +14,7 @@
 
 ## Features
 
-- [x] Protocol oriented programming
+- [x] OOP Principles
+- [x] Factory and Decorator Design patterns
 
 

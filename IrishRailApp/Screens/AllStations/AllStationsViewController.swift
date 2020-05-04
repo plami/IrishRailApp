@@ -113,7 +113,14 @@ extension AllStationsViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: StationTableViewCell = tableView.dequeueCell(StationTableViewCell.self)
         let currentStation = self.stationList[indexPath.item]
-        cell.configureCell(withDirection: currentStation.StationDesc!, withCode: currentStation.StationCode!, withLatitude: currentStation.StationLatitude!, withLongitude: currentStation.StationLongitude!)
+        guard let direction = currentStation.StationDesc,
+            let stationCode = currentStation.StationCode,
+            let stationLatitude = currentStation.StationLatitude,
+            let stationLongitude= currentStation.StationLongitude
+        else {
+                return UITableViewCell()
+        }
+        cell.configureCell(withDirection: direction, withCode: stationCode, withLatitude: stationLatitude, withLongitude: stationLongitude)
         
         return cell
     }
