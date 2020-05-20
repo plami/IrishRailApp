@@ -21,8 +21,12 @@ class TrainsByTypeWorker {
         .responseString { response in
             switch response.result {
             case .success(let value):
-                let trainsMapped = XMLMapper<AllTrainsModel>().map(XMLString: value)
-                self.trains = trainsMapped!.trains!
+                guard let trainsMapped = XMLMapper<AllTrainsModel>().map(XMLString: value)
+                    else { return }
+                guard let trains = trainsMapped.trains else {
+                    return
+                }
+                self.trains = trains
                 completionHandler(.success(self.trains))
             case .failure(let error):
                 completionHandler(.failure(error))

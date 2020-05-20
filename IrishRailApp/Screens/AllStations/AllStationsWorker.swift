@@ -25,12 +25,12 @@ class AllStationsWorker {
 
             switch response.result {
             case .success(let value):
-                let stationsMapped = XMLMapper<AllStationsModel>().map(XMLString: value)
-                if stationsMapped?.stations != nil {
-                    self.stations = stationsMapped!.stations!
-                } else {
-                    self.stations = []
+                guard let stationsMapped = XMLMapper<AllStationsModel>().map(XMLString: value)
+                    else { return }
+                guard let stations = stationsMapped.stations else {
+                        return
                 }
+                self.stations = stations
                 completionHandler(.success(self.stations))
             case .failure(let error):
                 completionHandler(.failure(error))

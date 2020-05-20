@@ -29,11 +29,10 @@ class MovementsWorker {
             case .success(let value):
                 guard let trainsMapped = XMLMapper<AllTrainsMovementModel>().map(XMLString: value)
                     else { return }
-                if trainsMapped.trains != nil {
-                    self.trains = trainsMapped.trains!
-                } else {
-                    self.trains = []
+                guard let trains = trainsMapped.trains else {
+                    return
                 }
+                self.trains = trains
                 completionHandler(.success(self.trains))
             case .failure(let error):
                 completionHandler(.failure(error))
