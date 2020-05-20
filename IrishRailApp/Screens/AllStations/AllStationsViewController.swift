@@ -116,7 +116,7 @@ extension AllStationsViewController: UITableViewDelegate, UITableViewDataSource 
         guard let direction = currentStation.StationDesc,
             let stationCode = currentStation.StationCode,
             let stationLatitude = currentStation.StationLatitude,
-            let stationLongitude= currentStation.StationLongitude
+            let stationLongitude = currentStation.StationLongitude
         else {
                 return UITableViewCell()
         }

@@ -25,7 +25,11 @@ class AllTrainsWorker {
             switch response.result {
             case .success(let value):
                 let trainsMapped = XMLMapper<AllTrainsModel>().map(XMLString: value)
-                self.trains = trainsMapped!.trains!
+                if trainsMapped?.trains != nil {
+                    self.trains = trainsMapped?.trains as! [TrainModel]
+                } else {
+                    self.trains = []
+                }
                 completionHandler(.success(self.trains))
             case .failure(let error):
                 completionHandler(.failure(error))
